@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pritam | Portfolio</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#1e7fec;
+    color:#333;
+}
+
+/* HEADER */
+header{
+    padding:20px 10%;
+    background:linear-gradient(90deg,#ece927,#4f6bff);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+nav{
+    display:flex;
+}
+
+nav a{
+    margin-left:25px;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    position:relative;
+}
+
+nav a::after{
+    content:'';
+    width:0;
+    height:2px;
+    background:white;
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* MOBILE MENU */
+.menu{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    padding:90px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    background:linear-gradient(to right,#f5f9ff,#eef3ff);
+}
+
+.hero-text{
+    flex:1;
+    animation:fadeLeft 1s;
+}
+
+.hero-text h1{
+    font-size:48px;
+    color:#0a3cff;
+}
+
+.hero-text h3{
+    margin:10px 0;
+    font-weight:500;
+}
+
+.hero-text p{
+    max-width:450px;
+    margin:20px 0;
+}
+
+.hero-text button{
+    padding:12px 30px;
+    background:#0a3cff;
+    color:white;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(10,60,255,.3);
+}
+
+.hero-text button:hover{
+    transform:translateY(-3px);
+}
+
+/* HERO IMAGE */
+.hero-img{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    animation:fadeRight 1s;
+}
+
+.hero-img img{
+    width:320px;
+    border-radius:50%;
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+/* ABOUT */
+.about{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.about h2{
+    font-size:34px;
+    color:#0a3cff;
+}
+
+.about p{
+    max-width:700px;
+    margin:20px auto;
+    color:#555;
+}
+
+/* SKILLS */
+.skills{
+    padding:80px 10%;
+    background:#f5f9ff;
+}
+
+.skills h2{
+    text-align:center;
+    color:#0a3cff;
+    margin-bottom:40px;
+}
+
+.skill{
+    margin-bottom:20px;
+}
+
+.skill span{
+    font-weight:500;
+}
+
+.bar{
+    height:10px;
+    background:#ddd;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:5px;
+}
+
+.bar div{
+    height:100%;
+    background:linear-gradient(90deg,#0a3cff,#4f6bff);
+}
+
+/* CONTACT */
+.contact{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.contact h2{
+    color:#0a3cff;
+}
+
+.socials{
+    margin-top:20px;
+}
+
+.socials a{
+    margin:0 10px;
+    font-size:22px;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    padding:20px;
+    text-align:center;
+    background:#0a3cff;
+    color:white;
+}
+
+/* ANIMATIONS */
+@keyframes fadeLeft{
+    from{opacity:0;transform:translateX(-50px)}
+    to{opacity:1;transform:translateX(0)}
+}
+
+@keyframes fadeRight{
+    from{opacity:0;transform:translateX(50px)}
+    to{opacity:1;transform:translateX(0)}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    nav{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        background:#0a3cff;
+        top:70px;
+        right:0;
+        width:200px;
+    }
+
+    nav a{
+        margin:15px;
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero-img img{
+        width:250px;
+        margin-top:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h2>Pritam</h2>
+    <div class="menu" onclick="toggleMenu()">☰</div>
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="hero">
+    <div class="hero-text">
+        <h1>Hi, I'm pritam</h1>
+        <h3>Hiring & Employee Position Expert</h3>
+        <p>Helping companies hire smarter, faster, and better talent.</p>
+        <button onclick="location.href='#contact'">Hire Me</button>
+    </div>
+
+    <div class="hero-img">
+        <img src="portimg.jpg" alt="Avishkar">
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I specialize in recruitment, HR operations, employee management, and company branding.</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills">
+    <h2>My Skills</h2>
+
+    <div class="skill">
+        <span>Hiring & Recruitment</span>
+        <div class="bar"><div style="width:90%"></div></div>
+    </div>
+
+    <div class="skill">
+        <span>Employee Management</span>
+        <div class="bar"><div style="width:85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <span>HR Consulting</span>
+        <div class="bar"><div style="width:80%"></div></div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: pritam@email.com</p>
+
+    <div class="socials">
+        <a href="#">🔗</a>
+        <a href="#">💼</a>
+        <a href="#">📧</a>
+    </div>
+</section>
+
+<footer>
+    © 2025 Pritam| All Rights Reserved
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("nav").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
